@@ -97,11 +97,11 @@ labeled_row("Patient Name", tk.Entry(root, textvariable=vars["patient_name"]), 1
 labeled_row("Patient DOB", DateEntry(root, textvariable=vars["dob"]), 2)
 labeled_row("Referring MD", tk.Entry(root, textvariable=vars["referring_md"]), 3)
 
-study_type_menu = ttk.Combobox(root, textvariable=vars["study_type"], values=["PSG", "CPAP", "BiPAP", "HSAT"])
-study_ran_menu = ttk.Combobox(root, textvariable=vars["study_ran"], values=["Full Night", "Split Night", "Titration"])
+study_type_menu = ttk.Combobox(root, textvariable=vars["study_type"], values=["PSG", "Split Night", "Titration"])
+study_ran_menu = ttk.Combobox(root, textvariable=vars["study_ran"], values=["PSG", "Split Night", "Titration"])
 mask_used_menu = ttk.Combobox(root, textvariable=vars["mask_used"], values=["Nasal", "Full Face", "Nasal Pillows"])
-sleep_tech_menu = ttk.Combobox(root, textvariable=vars["sleep_tech"], values=["Tech A", "Tech B", "Tech C"])
-location_menu = ttk.Combobox(root, textvariable=vars["location"], values=["Main Lab", "Satellite Office", "Home"])
+sleep_tech_menu = ttk.Combobox(root, textvariable=vars["sleep_tech"], values=["S. Valenzuela, RPSGT", "Tech B", "Tech C"])
+location_menu = ttk.Combobox(root, textvariable=vars["location"], values=["Long Beach", "Torrance"])
 
 labeled_row("Study Type", study_type_menu, 4)
 labeled_row("Study Ran", study_ran_menu, 5)
@@ -110,7 +110,7 @@ labeled_row("SPO2 Nadir (%)", tk.Entry(root, textvariable=vars["spo2_nadir"]), 7
 
 # Sleep Issues Radio Buttons
 tk.Label(root, text="Sleep Issues").grid(row=8, column=0, sticky="w", padx=10)
-for i, issue in enumerate(["Yes", "No", "Unknown"]):
+for i, issue in enumerate(["Snoring", "EDS", "Witnessed Apneas"]):
     tk.Radiobutton(root, text=issue, variable=vars["sleep_issues"], value=issue).grid(row=8, column=1+i, sticky="w")
 
 labeled_row("Sleep Tech", sleep_tech_menu, 9)
